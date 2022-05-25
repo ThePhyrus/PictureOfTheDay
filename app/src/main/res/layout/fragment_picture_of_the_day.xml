@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/padding_double"
+    android:padding="@dimen/padding"
     tools:context=".view.picture.PictureOfTheDayFragment">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:endIconMode="custom"
+        app:startIconDrawable="@drawable/ic_search"
+        app:startIconContentDescription="@string/content_description_icon_text"
         android:hint="@string/search_in_wiki"
         app:helperText="@string/wiki_helper_text"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,6 +23,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputEditText"
             android:layout_width="match_parent"
+            android:inputType="textPassword"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
