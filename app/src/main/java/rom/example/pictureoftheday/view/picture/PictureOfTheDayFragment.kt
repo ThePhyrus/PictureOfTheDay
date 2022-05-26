@@ -4,10 +4,8 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import coil.load
@@ -16,8 +14,10 @@ import rom.example.pictureoftheday.R
 import rom.example.pictureoftheday.databinding.FragmentPictureOfTheDayBinding
 import rom.example.pictureoftheday.utils.TAG
 import rom.example.pictureoftheday.utils.WIKI_DOMAIN
+import rom.example.pictureoftheday.view.MainActivity
 import rom.example.pictureoftheday.viewmodel.PictureOfTheDayAppState
 import rom.example.pictureoftheday.viewmodel.PictureOfTheDayViewModel
+import java.util.zip.Inflater
 
 
 class PictureOfTheDayFragment : Fragment() {
@@ -36,6 +36,28 @@ class PictureOfTheDayFragment : Fragment() {
 
     private val viewModel: PictureOfTheDayViewModel by lazy {
         ViewModelProvider(this).get(PictureOfTheDayViewModel::class.java)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_bottom_bar, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            R.id.app_bar_fav -> {
+                Log.d(TAG, "onOptionsItemSelected() called with: item = $item")
+            }
+            R.id.app_bar_settings -> {
+                Log.d(TAG, "onOptionsItemSelected() called with: item = $item")
+            }
+            android.R.id.home -> {
+                BottomNavigationDrawerFragment.newInstance()
+                    .show(requireActivity().supportFragmentManager, "TAG!???!!?") //todo dismiss
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -96,6 +118,14 @@ class PictureOfTheDayFragment : Fragment() {
                 )
             }
         })
+
+
+        setupToolbar()
+    }
+
+    private fun setupToolbar() {
+        (requireActivity() as MainActivity).setSupportActionBar(binding.bottomAppBar)
+        setHasOptionsMenu(true)
     }
 
 
