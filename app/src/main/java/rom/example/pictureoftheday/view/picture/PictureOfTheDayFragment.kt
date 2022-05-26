@@ -131,8 +131,6 @@ class PictureOfTheDayFragment : Fragment() {
         })
     }
 
-
-
     private fun setupFAB() {
         binding.fab.setOnClickListener {
             if (isMain) {
