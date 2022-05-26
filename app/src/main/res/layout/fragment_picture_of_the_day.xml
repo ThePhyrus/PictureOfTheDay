@@ -10,8 +10,8 @@
         android:layout_height="wrap_content"
         android:hint="@string/search_in_wiki"
         app:endIconDrawable="@drawable/ic_wikipedia"
-        app:helperText="@string/wiki_helper_text"
         app:endIconMode="custom"
+        app:helperText="@string/wiki_helper_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,6 +35,24 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_no_photo_vector" />
 
-    <include android:id="@+id/lifeHack" layout="@layout/bottom_shift_layout"/>
+    <include
+        android:id="@+id/lifeHack"
+        layout="@layout/bottom_shift_layout" />
 
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottom_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:backgroundTint="?colorPrimary"
+        app:fabAlignmentMode="center"
+        app:navigationIcon="@drawable/ic_hamburger_menu_bottom_bar" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="?colorOnPrimary"
+        app:layout_anchor="@id/bottom_app_bar"
+        app:srcCompat="@drawable/ic_plus_fab" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -34,14 +34,19 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
         <!-- Customize your theme here. -->
         <item name="textInputStyle">@style/TheStyleTextInputLayout</item>
-    </style>
 
+        <item name="floatingActionButtonStyle">@style/TheStyleFloatingActionButton</item>
+    </style>
 
     <style name="TheStyleTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
 <!--    <style name="TheStyleTextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">-->
-        <item name="boxStrokeColor">#000000</item>
+        <item name="boxStrokeColor">#5E9300</item>
         <item name="boxBackgroundColor">#DADFE6</item>
-        <item name="hintTextColor">#000000</item>
+        <item name="hintTextColor">#BA07CE</item>
+    </style>
+
+    <style name="TheStyleFloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="tint">@color/red_600</item>
     </style>
 </resources>
 
