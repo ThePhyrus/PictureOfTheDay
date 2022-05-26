@@ -1,5 +1,7 @@
 package rom.example.pictureoftheday.view.picture
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import coil.load
 import rom.example.pictureoftheday.R
 import rom.example.pictureoftheday.databinding.FragmentPictureOfTheDayBinding
+import rom.example.pictureoftheday.utils.WIKI_DOMAIN
 import rom.example.pictureoftheday.viewmodel.PictureOfTheDayAppState
 import rom.example.pictureoftheday.viewmodel.PictureOfTheDayViewModel
 
@@ -39,6 +42,12 @@ class PictureOfTheDayFragment : Fragment() {
             renderData(it)
         })
         viewModel.sendRequest()
+
+        binding.inputLayout.setEndIconOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW).apply {
+                data = Uri.parse("$WIKI_DOMAIN${binding.inputEditText.text.toString()}")
+            })
+        }
     }
 
     private fun renderData(pictureOfTheDayAppState: PictureOfTheDayAppState){

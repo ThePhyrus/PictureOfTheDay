@@ -40,13 +40,8 @@
     <style name="TheStyleTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
 <!--    <style name="TheStyleTextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">-->
         <item name="boxStrokeColor">#000000</item>
-        <item name="helperTextTextColor">#000000</item>
         <item name="boxBackgroundColor">#DADFE6</item>
-        <item name="helperTextEnabled">true</item>
         <item name="hintTextColor">#000000</item>
-        <item name="counterEnabled">true</item>
-        <item name="counterMaxLength">25</item>
-
     </style>
 </resources>
 

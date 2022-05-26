@@ -9,21 +9,20 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputLayout"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:endIconMode="custom"
-        app:startIconDrawable="@drawable/ic_search"
-        app:startIconContentDescription="@string/content_description_icon_text"
         android:hint="@string/search_in_wiki"
+        app:endIconDrawable="@drawable/ic_wikipedia"
         app:helperText="@string/wiki_helper_text"
+        app:endIconMode="custom"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:startIconContentDescription="@string/content_description_icon_text">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputEditText"
             android:layout_width="match_parent"
-            android:inputType="textPassword"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -33,10 +32,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:contentDescription="@string/photo_of_the_day_stub"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/inputLayout"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_no_photo_vector" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
