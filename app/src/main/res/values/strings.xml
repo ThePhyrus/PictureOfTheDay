@@ -15,6 +15,9 @@
     <string name="explanation_text">This lovely starfield spans some four full moons.</string>
     <string name="on_screen_1">On screen 1</string>
     <string name="on_screen_2">On screen 2</string>
+    <string name="today">Today</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="pozavchera">Pozavchera</string>
 
 
 </resources>

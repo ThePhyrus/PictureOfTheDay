@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import coil.load
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.chip.Chip
 import rom.example.pictureoftheday.R
 import rom.example.pictureoftheday.databinding.FragmentPictureOfTheDayBinding
 import rom.example.pictureoftheday.utils.TAG
@@ -138,6 +139,19 @@ class PictureOfTheDayFragment : Fragment() {
 //                binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar)
             }
             isMain = !isMain
+        }
+
+        binding.chipGroup.setOnCheckedChangeListener { group, position ->
+
+            /*when(position){ //todo HW
+                1 -> {viewModel.sendRequestToday()}
+                2 -> {viewModel.sendRequestYesterday()}
+                3 -> {viewModel.sendRequestTheDayBeforeYesterday()}
+                4 -> {viewModel.sendRequestFullHD()}
+            }*/
+            group.findViewById<Chip>(position)?.let {
+                Log.d(TAG, "renderData: ${it.text} $position")
+            }
         }
     }
 

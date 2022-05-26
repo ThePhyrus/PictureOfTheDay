@@ -36,6 +36,7 @@
         <!-- Customize your theme here. -->
         <item name="textInputStyle">@style/TheStyleTextInputLayout</item>
         <item name="floatingActionButtonStyle">@style/TheStyleFloatingActionButton</item>
+        <item name="chipStyle">@style/TheStyleChip</item>
     </style>
 
 <!--    Custom styles-->
@@ -48,6 +49,10 @@
 
     <style name="TheStyleFloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
         <item name="tint">@color/red_600</item>
+    </style>
+
+    <style name="TheStyleChip" parent="Widget.MaterialComponents.Chip.Choice">
+
     </style>
 </resources>
 
