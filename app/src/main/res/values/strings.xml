@@ -11,6 +11,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="content_description_icon_text">content description start icon</string>
+    <string name="title_text">Two Clusters and a Comet</string>
+    <string name="explanation_text">This lovely starfield spans some four full moons.</string>
 
 
 </resources>
