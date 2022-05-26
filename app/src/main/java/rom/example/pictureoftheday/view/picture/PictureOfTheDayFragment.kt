@@ -85,19 +85,20 @@ class PictureOfTheDayFragment : Fragment() {
             is PictureOfTheDayAppState.Loading -> {}//todo
             is PictureOfTheDayAppState.Success -> {
                 with(binding) {
-                    imageView.load(pictureOfTheDayAppState.pictureOfTheDayResponseData.url)
+                    imageView.load(pictureOfTheDayAppState.pictureOfTheDayResponseData.url){
+                        //todo HW скрасить ожидание картинки
+                    }//.hdurl
                     lifeHack.title.text =
                         pictureOfTheDayAppState.pictureOfTheDayResponseData.title
                     lifeHack.explanation.text =
                         pictureOfTheDayAppState.pictureOfTheDayResponseData.explanation
-                    //todo HW скрасить ожидание картинки
                 }
             }
         }
 
 
         val bottomShiftBehavior = BottomSheetBehavior.from(binding.lifeHack.bottomSheetContainer)
-        bottomShiftBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+        bottomShiftBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
         bottomShiftBehavior.addBottomSheetCallback(object :
             BottomSheetBehavior.BottomSheetCallback() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {
@@ -149,6 +150,14 @@ class PictureOfTheDayFragment : Fragment() {
                 3 -> {viewModel.sendRequestTheDayBeforeYesterday()}
                 4 -> {viewModel.sendRequestFullHD()}
             }*/
+
+            /*when(position){ //todo HW
+                1 -> {viewModel.sendRequest(data)}
+                2 -> {viewModel.sendRequest(data-1)}
+                3 -> {viewModel.sendRequestTheDayBefore(data-2)}
+                4 -> {viewModel.sendRequest(data-3)}
+            }*/
+
             group.findViewById<Chip>(position)?.let {
                 Log.d(TAG, "renderData: ${it.text} $position")
             }
