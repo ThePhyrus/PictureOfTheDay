@@ -26,6 +26,7 @@
         <item name="textInputStyle">@style/StyleForTextInputLayout</item>
         <item name="floatingActionButtonStyle">@style/StyleForFAB</item>
         <item name="chipStyle">@style/StyleForChip</item>
+        <item name="tabStyle">@style/StyleForTabLayout</item>
     </style>
 
 

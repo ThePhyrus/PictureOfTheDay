@@ -16,6 +16,10 @@
 
     </style>
 
+    <style name="StyleForTabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="tabRippleColor">@drawable/tab_item_ripple</item>
+    </style>
+
 
     <style name="GrayTheme" parent="BaseTheme">
         <item name="superColor_100">@color/gray_100</item>
