@@ -21,9 +21,8 @@
     </style>
 
     <style name="StyleForTextAppearance" parent="TextAppearance.MaterialComponents.Body2">
-        <item name="fontFamily">sans-serif</item>
-        <item name="android:fontFamily">sans-serif</item>
-        <item name="android:textStyle">normal</item>
+        <item name="fontFamily">@font/alex_brush</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:textSize">14sp</item>
         <item name="android:letterSpacing">0.0178571429</item>
