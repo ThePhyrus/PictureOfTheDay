@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
 <!--    <style name="Theme.PictureOfTheDay" parent="Theme.Material3.DayNight">-->
-    <style name="Theme.PictureOfTheDay" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="BaseTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
         <!-- Primary brand color -->
         <item name="android:navigationBarColor">@color/red_500</item>
@@ -27,6 +27,8 @@
         <item name="floatingActionButtonStyle">@style/StyleForFAB</item>
         <item name="chipStyle">@style/StyleForChip</item>
     </style>
+
+
 
 </resources>
 

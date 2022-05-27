@@ -9,7 +9,6 @@
     <color name="white">#FFFFFFFF</color>
 
 
-
     <color name="color_gray">#66000000</color>
 
 
@@ -20,4 +19,26 @@
     <color name="red_700">#D72A2A</color>
     <color name="red_800">#C82424</color>
     <color name="red_900">#AE0B0B</color>
+
+
+    <color name="gray_100">#bcbcbc</color>
+    <color name="gray_200">#bcbcbc</color>
+    <color name="gray_300">#aeaeae</color>
+    <color name="gray_400">#8d8d8d</color>
+    <color name="gray_500">#707070</color>
+    <color name="gray_600">#494949</color>
+    <color name="gray_700">#373737</color>
+    <color name="gray_800">#1b1b1b</color>
+    <color name="gray_900">#000000</color>
+
+
+    <color name="red_test">#B30000</color>
+    <color name="orange_test">#FF7700</color>
+    <color name="yellow_test">#FFFC42</color>
+    <color name="green_test">#00B31D</color>
+    <color name="blue_test">#6B8BFF</color>
+    <color name="blue_dark_test">#003BD3</color>
+    <color name="purple_test">#5C0071</color>
+
+
 </resources>

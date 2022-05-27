@@ -17,4 +17,21 @@
 
     </style>
 
+    <style name="GrayTheme" parent="BaseTheme">
+        <item name="android:navigationBarColor">@color/gray_500</item>
+        <item name="colorPrimary">@color/gray_600</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/gray_100</item>
+        <item name="colorOnPrimaryContainer">@color/gray_900</item>
+        <item name="colorPrimaryInverse">@color/gray_200</item>
+        <item name="colorSecondary">@color/gray_600</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/gray_100</item>
+        <item name="colorOnSecondaryContainer">@color/gray_900</item>
+        <item name="colorTertiary">@color/gray_600</item>
+        <item name="colorOnTertiary">@color/white</item>
+        <item name="colorTertiaryContainer">@color/gray_100</item>
+        <item name="colorOnTertiaryContainer">@color/gray_900</item>
+    </style>
+
 </resources>
