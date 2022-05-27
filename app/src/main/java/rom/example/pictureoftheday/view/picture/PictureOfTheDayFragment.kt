@@ -20,15 +20,14 @@ import rom.example.pictureoftheday.utils.WIKI_DOMAIN
 import rom.example.pictureoftheday.view.MainActivity
 import rom.example.pictureoftheday.viewmodel.PictureOfTheDayAppState
 import rom.example.pictureoftheday.viewmodel.PictureOfTheDayViewModel
-import java.util.zip.Inflater
 
 
 class PictureOfTheDayFragment : Fragment() {
 
     private var _binding: FragmentPictureOfTheDayBinding? = null
     private val binding: FragmentPictureOfTheDayBinding get() = _binding!!
-    var isMain = true
-
+    private var isMain =
+        true//FIXME зачем это свойство? Я ещё с isRussian не разобрался в погодном приложении((
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,7 +47,6 @@ class PictureOfTheDayFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
         when (item.itemId) {
             R.id.app_bar_fav -> {
                 Log.d(TAG, "onOptionsItemSelected() called with: item = $item")
@@ -66,12 +64,14 @@ class PictureOfTheDayFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         viewModel.getLiveData().observe(viewLifecycleOwner, Observer {
             renderData(it)
         })
         viewModel.sendRequest()
+        setEndIconOnClickListener()
+    }
 
+    private fun setEndIconOnClickListener() {
         binding.inputLayout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
                 data = Uri.parse("$WIKI_DOMAIN${binding.inputEditText.text.toString()}")
@@ -85,9 +85,9 @@ class PictureOfTheDayFragment : Fragment() {
             is PictureOfTheDayAppState.Loading -> {}//todo
             is PictureOfTheDayAppState.Success -> {
                 with(binding) {
-                    imageView.load(pictureOfTheDayAppState.pictureOfTheDayResponseData.url){
+                    imageView.load(pictureOfTheDayAppState.pictureOfTheDayResponseData.hdurl) {
                         //todo HW скрасить ожидание картинки
-                    }//.hdurl
+                    }//.url
                     lifeHack.title.text =
                         pictureOfTheDayAppState.pictureOfTheDayResponseData.title
                     lifeHack.explanation.text =
@@ -96,7 +96,16 @@ class PictureOfTheDayFragment : Fragment() {
             }
         }
 
+        createBottomSheetBehavior()
 
+        setupToolbar()
+
+        setupFAB()
+
+        setupChipGroup()
+    }
+
+    private fun createBottomSheetBehavior() {
         val bottomShiftBehavior = BottomSheetBehavior.from(binding.lifeHack.bottomSheetContainer)
         bottomShiftBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
         bottomShiftBehavior.addBottomSheetCallback(object :
@@ -117,31 +126,42 @@ class PictureOfTheDayFragment : Fragment() {
             }
 
             override fun onSlide(bottomSheet: View, slideOffset: Float) {
-                Log.d(
-                    TAG,
-                    "onSlide() called with: bottomSheet = $bottomSheet, slideOffset = $slideOffset"
-                )
+                Log.d(TAG, "onSlide() called with: bottomSheet")
             }
         })
+    }
 
-
-        setupToolbar()
-
+    private fun setupFAB() {
         binding.fab.setOnClickListener {
-            if (isMain){
+            if (isMain) {
                 binding.bottomAppBar.navigationIcon = null
                 binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
-                binding.fab.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.ic_back_fab))
-//                binding.bottomAppBar.replaceMenu(//todo показать другое меню)
-            }else{
-                binding.bottomAppBar.navigationIcon = (ContextCompat.getDrawable(requireContext(),R.drawable.ic_hamburger_menu_bottom_bar))
+                binding.fab.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.ic_back_fab
+                    )
+                )
+                //                binding.bottomAppBar.replaceMenu(//todo показать другое меню)
+            } else {
+                binding.bottomAppBar.navigationIcon = (ContextCompat.getDrawable(
+                    requireContext(),
+                    R.drawable.ic_hamburger_menu_bottom_bar
+                ))
                 binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
-                binding.fab.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.ic_plus_fab))
-//                binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar)
+                binding.fab.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.ic_plus_fab
+                    )
+                )
+                //                binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar)
             }
             isMain = !isMain
         }
+    }
 
+    private fun setupChipGroup() {
         binding.chipGroup.setOnCheckedChangeListener { group, position ->
 
             /*when(position){ //todo HW
@@ -151,7 +171,7 @@ class PictureOfTheDayFragment : Fragment() {
                 4 -> {viewModel.sendRequestFullHD()}
             }*/
 
-            /*when(position){ //todo HW
+            /*when(position){ //todo HW лучший вариант
                 1 -> {viewModel.sendRequest(data)}
                 2 -> {viewModel.sendRequest(data-1)}
                 3 -> {viewModel.sendRequestTheDayBefore(data-2)}
