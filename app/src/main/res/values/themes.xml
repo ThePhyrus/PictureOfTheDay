@@ -27,6 +27,7 @@
         <item name="floatingActionButtonStyle">@style/StyleForFAB</item>
         <item name="chipStyle">@style/StyleForChip</item>
         <item name="tabStyle">@style/StyleForTabLayout</item>
+        <item name="textAppearanceBody2">@style/StyleForTextAppearance</item>
     </style>
 
 
