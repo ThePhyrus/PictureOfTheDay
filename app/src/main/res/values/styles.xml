@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    Custom styles-->
+
+    <style name="StyleForTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <!--    <style name="TheStyleTextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">-->
+        <item name="boxStrokeColor">#5E9300</item>
+        <item name="boxBackgroundColor">#DADFE6</item>
+        <item name="hintTextColor">#BA07CE</item>
+    </style>
+
+    <style name="StyleForFAB" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="tint">@color/red_600</item>
+    </style>
+
+    <style name="StyleForChip" parent="Widget.MaterialComponents.Chip.Choice">
+
+    </style>
+
+</resources>
