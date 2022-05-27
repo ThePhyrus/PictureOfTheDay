@@ -9,9 +9,10 @@
     <color name="white">#FFFFFFFF</color>
 
 
-    <color name="color_gray">#66000000</color>
+    <!--Vector colors-->
+    <color name="gray_vector">#66000000</color>
 
-
+    <!--Red theme colors-->
     <color name="red_100">#FBC7CC</color>
     <color name="red_200">#FB4844</color>
     <color name="red_500">#FF4234</color>
@@ -20,7 +21,7 @@
     <color name="red_800">#C82424</color>
     <color name="red_900">#AE0B0B</color>
 
-
+    <!--Gray theme colors-->
     <color name="gray_100">#bcbcbc</color>
     <color name="gray_200">#bcbcbc</color>
     <color name="gray_300">#aeaeae</color>
@@ -31,7 +32,29 @@
     <color name="gray_800">#1b1b1b</color>
     <color name="gray_900">#000000</color>
 
+    <!--Green theme colors-->
+    <color name="green_100">#97b498</color>
+    <color name="green_200">#75a478</color>
+    <color name="green_300">#519657</color>
+    <color name="green_400">#338a3e</color>
+    <color name="green_500">#087f23</color>
+    <color name="green_600">#00701a</color>
+    <color name="green_700">#00600f</color>
+    <color name="green_800">#005005</color>
+    <color name="green_900">#003300</color>
 
+    <!--Toxic theme colors-->
+    <color name="toxic_green_100">#97b498</color>
+    <color name="toxic_green_200">#75a478</color>
+    <color name="toxic_green_300">#00FA0D</color>
+    <color name="toxic_green_400">#00DC13</color>
+    <color name="toxic_green_500">#00C81D</color>
+    <color name="toxic_green_600">#00AA32</color>
+    <color name="toxic_green_700">#009617</color>
+    <color name="toxic_green_800">#007807</color>
+    <color name="toxic_green_900">#006407</color>
+
+    <!--Rainbow colors-->
     <color name="red_test">#B30000</color>
     <color name="orange_test">#FF7700</color>
     <color name="yellow_test">#FFFC42</color>

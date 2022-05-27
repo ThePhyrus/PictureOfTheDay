@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="superColor_100" format="reference"/>
+    <attr name="superColor_200" format="reference"/>
+    <attr name="superColor_300" format="reference"/>
+    <attr name="superColor_400" format="reference"/>
+    <attr name="superColor_500" format="reference"/>
+    <attr name="superColor_600" format="reference"/>
+    <attr name="superColor_700" format="reference"/>
+    <attr name="superColor_800" format="reference"/>
+    <attr name="superColor_900" format="reference"/>
+
+</resources>

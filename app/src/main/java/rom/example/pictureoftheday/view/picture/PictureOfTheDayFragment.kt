@@ -18,6 +18,7 @@ import rom.example.pictureoftheday.databinding.FragmentPictureOfTheDayBinding
 import rom.example.pictureoftheday.utils.TAG
 import rom.example.pictureoftheday.utils.WIKI_DOMAIN
 import rom.example.pictureoftheday.view.MainActivity
+import rom.example.pictureoftheday.view.settings.SettingsFragment
 import rom.example.pictureoftheday.viewmodel.PictureOfTheDayAppState
 import rom.example.pictureoftheday.viewmodel.PictureOfTheDayViewModel
 
@@ -49,11 +50,13 @@ class PictureOfTheDayFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when (item.itemId) {
-            R.id.app_bar_fav -> {
+            R.id.appBarFavorite -> {
                 Log.d(TAG, "onOptionsItemSelected() called with: item = $item")
             }
-            R.id.app_bar_settings -> {
+            R.id.appBarSettings -> {
                 Log.d(TAG, "onOptionsItemSelected() called with: item = $item")
+                requireActivity().supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, SettingsFragment.newInstance()).commit()
             }
             android.R.id.home -> {
                 BottomNavigationDrawerFragment.newInstance()
@@ -101,12 +104,11 @@ class PictureOfTheDayFragment : Fragment() {
 
         setupFAB()
 
-        setupChipGroup()
     }
 
     private fun createBottomSheetBehavior() {
         val bottomShiftBehavior = BottomSheetBehavior.from(binding.lifeHack.bottomSheetContainer)
-        bottomShiftBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
+        bottomShiftBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
         bottomShiftBehavior.addBottomSheetCallback(object :
             BottomSheetBehavior.BottomSheetCallback() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {
@@ -128,28 +130,7 @@ class PictureOfTheDayFragment : Fragment() {
         })
     }
 
-    private fun setupChipGroup() {
-        binding.chipGroup.setOnCheckedChangeListener { group, position ->
 
-            /*when(position){ //todo HW
-                1 -> {viewModel.sendRequestToday()}
-                2 -> {viewModel.sendRequestYesterday()}
-                3 -> {viewModel.sendRequestTheDayBeforeYesterday()}
-                4 -> {viewModel.sendRequestFullHD()}
-            }*/
-
-            /*when(position){ //todo HW
-                1 -> {viewModel.sendRequest(data)}
-                2 -> {viewModel.sendRequest(data-1)}
-                3 -> {viewModel.sendRequestTheDayBefore(data-2)}
-                4 -> {viewModel.sendRequest(data-3)}
-            }*/
-
-            group.findViewById<Chip>(position)?.let {
-                Log.d(TAG, "renderData: ${it.text} $position")
-            }
-        }
-    }
 
     private fun setupFAB() {
         binding.fab.setOnClickListener {

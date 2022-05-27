@@ -19,6 +19,9 @@
     <string name="yesterday">Yesterday</string>
     <string name="pozavchera">Pozavchera</string>
     <string name="full_hd">Full-HD</string>
+    <string name="menu_1">Menu 1</string>
+    <string name="menu_2">Menu 2</string>
+    <string name="menu_3">Menu 3</string>
 
 
 </resources>

@@ -3,7 +3,6 @@
     <!--    Custom styles-->
 
     <style name="StyleForTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
-        <!--    <style name="TheStyleTextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">-->
         <item name="boxStrokeColor">#5E9300</item>
         <item name="boxBackgroundColor">#DADFE6</item>
         <item name="hintTextColor">#BA07CE</item>
@@ -17,21 +16,41 @@
 
     </style>
 
+
     <style name="GrayTheme" parent="BaseTheme">
-        <item name="android:navigationBarColor">@color/gray_500</item>
-        <item name="colorPrimary">@color/gray_600</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="colorPrimaryContainer">@color/gray_100</item>
-        <item name="colorOnPrimaryContainer">@color/gray_900</item>
-        <item name="colorPrimaryInverse">@color/gray_200</item>
-        <item name="colorSecondary">@color/gray_600</item>
-        <item name="colorOnSecondary">@color/white</item>
-        <item name="colorSecondaryContainer">@color/gray_100</item>
-        <item name="colorOnSecondaryContainer">@color/gray_900</item>
-        <item name="colorTertiary">@color/gray_600</item>
-        <item name="colorOnTertiary">@color/white</item>
-        <item name="colorTertiaryContainer">@color/gray_100</item>
-        <item name="colorOnTertiaryContainer">@color/gray_900</item>
+        <item name="superColor_100">@color/gray_100</item>
+        <item name="superColor_200">@color/gray_200</item>
+        <item name="superColor_300">@color/gray_300</item>
+        <item name="superColor_400">@color/gray_400</item>
+        <item name="superColor_500">@color/gray_500</item>
+        <item name="superColor_600">@color/gray_600</item>
+        <item name="superColor_700">@color/gray_700</item>
+        <item name="superColor_800">@color/gray_800</item>
+        <item name="superColor_900">@color/gray_900</item>
+    </style>
+
+    <style name="GreenTheme" parent="BaseTheme">
+        <item name="superColor_100">@color/green_100</item>
+        <item name="superColor_200">@color/green_200</item>
+        <item name="superColor_300">@color/green_300</item>
+        <item name="superColor_400">@color/green_400</item>
+        <item name="superColor_500">@color/green_500</item>
+        <item name="superColor_600">@color/green_600</item>
+        <item name="superColor_700">@color/green_700</item>
+        <item name="superColor_800">@color/green_800</item>
+        <item name="superColor_900">@color/green_900</item>
+    </style>
+
+    <style name="ToxicGreenTheme" parent="BaseTheme">
+        <item name="superColor_100">@color/toxic_green_100</item>
+        <item name="superColor_200">@color/toxic_green_200</item>
+        <item name="superColor_300">@color/toxic_green_300</item>
+        <item name="superColor_400">@color/toxic_green_400</item>
+        <item name="superColor_500">@color/toxic_green_500</item>
+        <item name="superColor_600">@color/toxic_green_600</item>
+        <item name="superColor_700">@color/toxic_green_700</item>
+        <item name="superColor_800">@color/toxic_green_800</item>
+        <item name="superColor_900">@color/toxic_green_900</item>
     </style>
 
 </resources>
