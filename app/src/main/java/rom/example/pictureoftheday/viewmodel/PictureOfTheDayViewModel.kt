@@ -21,19 +21,20 @@ class PictureOfTheDayViewModel(
 
     fun sendRequest() {
         liveData.postValue(PictureOfTheDayAppState.Loading(null))
-        pictureOfTheDayRetrofitImpl.getRetrofit().getPictureOfTheDay(BuildConfig.NASA_API_KEY).enqueue(callback)
+        pictureOfTheDayRetrofitImpl.getRetrofit().getPictureOfTheDay(BuildConfig.NASA_API_KEY)
+            .enqueue(callback)
     }
 
-    private val callback = object : Callback<PictureOfTheDayResponseData>{
+    private val callback = object : Callback<PictureOfTheDayResponseData> {
         override fun onResponse(
             call: Call<PictureOfTheDayResponseData>,
             response: Response<PictureOfTheDayResponseData>
         ) {
-            if (response.isSuccessful){
+            if (response.isSuccessful) {
                 response.body()?.let {
                     liveData.postValue(PictureOfTheDayAppState.Success(it))
                 }
-            }else {
+            } else {
                 //todo HW
             }
         }

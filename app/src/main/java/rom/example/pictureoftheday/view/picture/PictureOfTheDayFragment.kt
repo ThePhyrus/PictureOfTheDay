@@ -20,7 +20,6 @@ import rom.example.pictureoftheday.utils.WIKI_DOMAIN
 import rom.example.pictureoftheday.view.MainActivity
 import rom.example.pictureoftheday.viewmodel.PictureOfTheDayAppState
 import rom.example.pictureoftheday.viewmodel.PictureOfTheDayViewModel
-import java.util.zip.Inflater
 
 
 class PictureOfTheDayFragment : Fragment() {
@@ -85,7 +84,7 @@ class PictureOfTheDayFragment : Fragment() {
             is PictureOfTheDayAppState.Loading -> {}//todo
             is PictureOfTheDayAppState.Success -> {
                 with(binding) {
-                    imageView.load(pictureOfTheDayAppState.pictureOfTheDayResponseData.url){
+                    imageView.load(pictureOfTheDayAppState.pictureOfTheDayResponseData.url) {
                         //todo HW скрасить ожидание картинки
                     }//.hdurl
                     lifeHack.title.text =
@@ -96,7 +95,16 @@ class PictureOfTheDayFragment : Fragment() {
             }
         }
 
+        createBottomSheetBehavior()
 
+        setupToolbar()
+
+        setupFAB()
+
+        setupChipGroup()
+    }
+
+    private fun createBottomSheetBehavior() {
         val bottomShiftBehavior = BottomSheetBehavior.from(binding.lifeHack.bottomSheetContainer)
         bottomShiftBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
         bottomShiftBehavior.addBottomSheetCallback(object :
@@ -110,38 +118,17 @@ class PictureOfTheDayFragment : Fragment() {
                     BottomSheetBehavior.STATE_HIDDEN -> {}
                     BottomSheetBehavior.STATE_SETTLING -> {}
                 }
-                Log.d(
-                    TAG,
-                    "onStateChanged() called with: bottomSheet = $bottomSheet, newState = $newState"
-                )
+                Log.d(TAG, "onStateChanged: ")
             }
 
             override fun onSlide(bottomSheet: View, slideOffset: Float) {
-                Log.d(
-                    TAG,
-                    "onSlide() called with: bottomSheet = $bottomSheet, slideOffset = $slideOffset"
-                )
+                //FIXME для чего можно использовать отслеживание полжения?
+                Log.d(TAG, "onSlide: ")
             }
         })
+    }
 
-
-        setupToolbar()
-
-        binding.fab.setOnClickListener {
-            if (isMain){
-                binding.bottomAppBar.navigationIcon = null
-                binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
-                binding.fab.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.ic_back_fab))
-//                binding.bottomAppBar.replaceMenu(//todo показать другое меню)
-            }else{
-                binding.bottomAppBar.navigationIcon = (ContextCompat.getDrawable(requireContext(),R.drawable.ic_hamburger_menu_bottom_bar))
-                binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
-                binding.fab.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.ic_plus_fab))
-//                binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar)
-            }
-            isMain = !isMain
-        }
-
+    private fun setupChipGroup() {
         binding.chipGroup.setOnCheckedChangeListener { group, position ->
 
             /*when(position){ //todo HW
@@ -161,6 +148,36 @@ class PictureOfTheDayFragment : Fragment() {
             group.findViewById<Chip>(position)?.let {
                 Log.d(TAG, "renderData: ${it.text} $position")
             }
+        }
+    }
+
+    private fun setupFAB() {
+        binding.fab.setOnClickListener {
+            if (isMain) {
+                binding.bottomAppBar.navigationIcon = null
+                binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
+                binding.fab.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.ic_back_fab
+                    )
+                )
+                //                binding.bottomAppBar.replaceMenu(//todo показать другое меню)
+            } else {
+                binding.bottomAppBar.navigationIcon = (ContextCompat.getDrawable(
+                    requireContext(),
+                    R.drawable.ic_hamburger_menu_bottom_bar
+                ))
+                binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
+                binding.fab.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.ic_plus_fab
+                    )
+                )
+                //                binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar)
+            }
+            isMain = !isMain
         }
     }
 
