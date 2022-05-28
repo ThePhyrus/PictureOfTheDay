@@ -13,7 +13,12 @@
     </style>
 
     <style name="StyleForChip" parent="Widget.MaterialComponents.Chip.Choice">
-
+        <item name="shapeAppearance">@style/StyleForShapeAppearance</item>
+    </style>
+    
+    <style name="StyleForShapeAppearance" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">5dp</item>
+        <item name="cornerFamily">cut</item>
     </style>
 
     <style name="StyleForTabLayout" parent="Widget.MaterialComponents.TabLayout">
