@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.AppCompatImageView
+<!--    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/settingsFragmentImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_planet_earth" />
+        app:srcCompat="@drawable/ic_planet_earth" />-->
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chipGroup"
@@ -76,9 +76,20 @@
             android:layout_width="wrap_content"
             android:layout_height="?actionBarSize"
             android:text="@string/menu_3" />
-
-
     </com.google.android.material.tabs.TabLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/cardView"
+
+        android:layout_marginTop="@dimen/card_view_margin_top"
+        android:layout_marginStart="@dimen/card_view_margin_start"
+        android:layout_marginEnd="@dimen/card_view_margin_end"
+        android:layout_marginBottom="@dimen/card_view_margin_bottom"
+        app:layout_constraintTop_toBottomOf="@id/chipGroup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

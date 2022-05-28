@@ -57,6 +57,7 @@ class PictureOfTheDayFragment : Fragment() {
                 Log.d(TAG, "onOptionsItemSelected() called with: item = $item")
                 requireActivity().supportFragmentManager.beginTransaction()
                     .replace(R.id.container, SettingsFragment.newInstance()).commit()
+                //todo add fragment to backstack
             }
             android.R.id.home -> {
                 BottomNavigationDrawerFragment.newInstance()

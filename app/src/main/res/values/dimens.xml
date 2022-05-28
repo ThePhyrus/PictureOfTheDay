@@ -27,4 +27,8 @@
     <dimen name="bottom_sheet_explanation_padding_end">8dp</dimen>
     <dimen name="chip_group_margin_top">16dp</dimen>
     <dimen name="tab_layout_margin">16dp</dimen>
+    <dimen name="card_view_margin_top">16dp</dimen>
+    <dimen name="card_view_margin_start">16dp</dimen>
+    <dimen name="card_view_margin_end">16dp</dimen>
+    <dimen name="card_view_margin_bottom">16dp</dimen>
 </resources>

@@ -17,19 +17,25 @@
     </style>
     
     <style name="StyleForShapeAppearance" parent="ShapeAppearance.MaterialComponents.SmallComponent">
-        <item name="cornerSize">5dp</item>
         <item name="cornerFamily">cut</item>
+    </style>
+
+    <style name="StyleForShapeAppearanceCardView" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerSize">15%</item>
+        <item name="cornerFamily">rounded</item>
     </style>
 
     <style name="StyleForTabLayout" parent="Widget.MaterialComponents.TabLayout">
         <item name="tabRippleColor">@drawable/tab_item_ripple</item>
     </style>
 
+
+
     <style name="StyleForTextAppearance" parent="TextAppearance.MaterialComponents.Body2">
         <item name="fontFamily">@font/alex_brush</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAllCaps">false</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:letterSpacing">0.0178571429</item>
     </style>
 
