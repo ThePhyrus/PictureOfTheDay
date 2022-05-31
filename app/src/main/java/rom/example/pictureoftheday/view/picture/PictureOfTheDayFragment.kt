@@ -98,13 +98,10 @@ class PictureOfTheDayFragment : Fragment() {
                 }
             }
         }
-
+        setupChipGroup()
         createBottomSheetBehavior()
-
         setupToolbar()
-
         setupFAB()
-
     }
 
     private fun createBottomSheetBehavior() {
@@ -158,6 +155,29 @@ class PictureOfTheDayFragment : Fragment() {
                 //                binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar)
             }
             isMain = !isMain
+        }
+    }
+
+    private fun setupChipGroup() {
+        binding.chipGroup.setOnCheckedChangeListener { group, position ->
+
+            /*when(position){ //todo HW
+                1 -> {viewModel.sendRequestToday()}
+                2 -> {viewModel.sendRequestYesterday()}
+                3 -> {viewModel.sendRequestTheDayBeforeYesterday()}
+                4 -> {viewModel.sendRequestFullHD()}
+            }*/
+
+            /*when(position){ //todo HW
+                1 -> {viewModel.sendRequest(data)}
+                2 -> {viewModel.sendRequest(data-1)}
+                3 -> {viewModel.sendRequestTheDayBefore(data-2)}
+                4 -> {viewModel.sendRequest(data-3)}
+            }*/
+
+            group.findViewById<Chip>(position)?.let {
+                Log.d(TAG, "renderData: ${it.text} $position")
+            }
         }
     }
 

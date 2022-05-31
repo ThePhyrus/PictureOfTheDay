@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mainImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_planet_earth" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/input_layout_margin_start"
+        android:layout_marginTop="@dimen/input_layout_margin_top"
+        android:layout_marginEnd="@dimen/input_layout_margin_end"
+        android:layout_marginBottom="@dimen/input_layout_margin_bottom"
         android:hint="@string/search_in_wiki"
         app:endIconDrawable="@drawable/ic_wikipedia"
         app:endIconMode="custom"
         app:helperText="@string/wiki_helper_text"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:startIconContentDescription="@string/content_description_icon_text">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -31,7 +46,7 @@
         android:layout_marginTop="@dimen/chip_group_margin_top"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputLayout"
         app:singleSelection="true">
 
         <com.google.android.material.chip.Chip
@@ -60,38 +75,5 @@
             android:text="@string/full_hd" />
     </com.google.android.material.chip.ChipGroup>
 
-    <rom.example.pictureoftheday.utils.EquilateralImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_planet_earth"
-        android:contentDescription="@string/photo_of_the_day_stub"
-        app:layout_constraintBottom_toTopOf="@id/inputLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_no_photo_vector" />
 
-    <include
-        android:id="@+id/lifeHack"
-        layout="@layout/bottom_shift_layout" />
-
-    <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bottomAppBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        app:backgroundTint="?colorPrimary"
-        app:fabAlignmentMode="center"
-        app:navigationIcon="@drawable/ic_hamburger_menu_bottom_bar" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="?colorOnPrimary"
-        app:layout_anchor="@id/bottomAppBar"
-        app:srcCompat="@drawable/ic_plus_fab" />
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

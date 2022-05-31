@@ -2,10 +2,8 @@
 <resources>
     <!--    Custom styles-->
 
-    <style name="StyleForTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
-        <item name="boxStrokeColor">#5E9300</item>
-        <item name="boxBackgroundColor">#DADFE6</item>
-        <item name="hintTextColor">#BA07CE</item>
+    <style name="StyleForTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/gray_500</item>
     </style>
 
     <style name="StyleForFAB" parent="Widget.MaterialComponents.FloatingActionButton">

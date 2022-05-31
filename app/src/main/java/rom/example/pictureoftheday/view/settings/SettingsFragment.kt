@@ -32,7 +32,6 @@ class SettingsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupChipGroup()
 
         binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
@@ -61,28 +60,7 @@ class SettingsFragment : Fragment() {
 
         })
     }
-    private fun setupChipGroup() {
-        binding.chipGroup.setOnCheckedChangeListener { group, position ->
 
-            /*when(position){ //todo HW
-                1 -> {viewModel.sendRequestToday()}
-                2 -> {viewModel.sendRequestYesterday()}
-                3 -> {viewModel.sendRequestTheDayBeforeYesterday()}
-                4 -> {viewModel.sendRequestFullHD()}
-            }*/
-
-            /*when(position){ //todo HW
-                1 -> {viewModel.sendRequest(data)}
-                2 -> {viewModel.sendRequest(data-1)}
-                3 -> {viewModel.sendRequestTheDayBefore(data-2)}
-                4 -> {viewModel.sendRequest(data-3)}
-            }*/
-
-            group.findViewById<Chip>(position)?.let {
-                Log.d(TAG, "renderData: ${it.text} $position")
-            }
-        }
-    }
 
     companion object {
         @JvmStatic
