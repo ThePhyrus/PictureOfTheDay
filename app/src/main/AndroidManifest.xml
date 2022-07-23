@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="rom.example.pictureoftheday">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,18 +15,41 @@
         android:supportsRtl="true"
         android:theme="@style/BaseTheme"
         tools:targetApi="31">
-        <activity android:name=".navigation.ApiActivity"
+
+
+
+        <activity
+            android:name=".navigation.bottom.ApiBottomActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
+
+
+
+        <activity
+            android:name=".navigation.ApiActivity"
+            android:exported="true">
+
+        </activity>
+
+
+
         <activity
             android:name=".view.MainActivity"
             android:exported="true">
         </activity>
+
+
+
+
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
