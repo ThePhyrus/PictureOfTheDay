@@ -17,8 +17,11 @@ class ApiActivity : AppCompatActivity() {
         binding = ActivityApiBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.viewPager.adapter = ViewPagerAdapter(supportFragmentManager)
-//        binding.textOne.setTextColor(resources.getColor(R.color.blue_test))
-//        binding.textOne.setTextColor(resources.getColor(R.color.red_600))
+        binding.mTabLayout.setupWithViewPager(binding.viewPager)
+
+        binding.mTabLayout.getTabAt(0)?.setIcon(R.drawable.ic_earth)
+        binding.mTabLayout.getTabAt(1)?.setIcon(R.drawable.ic_mars)
+        binding.mTabLayout.getTabAt(2)?.setIcon(R.drawable.ic_system)
 
     }
 }
