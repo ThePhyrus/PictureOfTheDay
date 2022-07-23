@@ -15,7 +15,7 @@
     <style name="StyleForChip" parent="Widget.MaterialComponents.Chip.Choice">
         <item name="shapeAppearance">@style/StyleForShapeAppearance</item>
     </style>
-    
+
     <style name="StyleForShapeAppearance" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerFamily">cut</item>
     </style>
@@ -28,7 +28,6 @@
     <style name="StyleForTabLayout" parent="Widget.MaterialComponents.TabLayout">
         <item name="tabRippleColor">@drawable/tab_item_ripple</item>
     </style>
-
 
 
     <style name="StyleForTextAppearance" parent="TextAppearance.MaterialComponents.Body2">

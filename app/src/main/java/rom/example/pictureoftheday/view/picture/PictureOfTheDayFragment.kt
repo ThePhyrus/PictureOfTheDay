@@ -12,7 +12,6 @@ import androidx.lifecycle.ViewModelProvider
 import coil.load
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.chip.Chip
 import rom.example.pictureoftheday.R
 import rom.example.pictureoftheday.databinding.FragmentPictureOfTheDayBinding
 import rom.example.pictureoftheday.utils.TAG
@@ -130,7 +129,6 @@ class PictureOfTheDayFragment : Fragment() {
             }
         })
     }
-
 
 
     private fun setupFAB() {

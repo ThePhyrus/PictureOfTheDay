@@ -4,9 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import rom.example.pictureoftheday.R
 import rom.example.pictureoftheday.databinding.ActivityApiBinding
-import rom.example.pictureoftheday.databinding.ActivityMainBinding
 import rom.example.pictureoftheday.navigation.vp.ViewPagerAdapter
-import rom.example.pictureoftheday.view.picture.PictureOfTheDayFragment
 
 
 class ApiActivity : AppCompatActivity() {

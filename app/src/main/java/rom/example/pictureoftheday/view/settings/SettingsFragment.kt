@@ -61,6 +61,7 @@ class SettingsFragment : Fragment() {
 
         })
     }
+
     private fun setupChipGroup() {
         binding.chipGroup.setOnCheckedChangeListener { group, position ->
 

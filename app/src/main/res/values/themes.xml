@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-<!--    <style name="Theme.PictureOfTheDay" parent="Theme.Material3.DayNight">-->
+    <!--    <style name="Theme.PictureOfTheDay" parent="Theme.Material3.DayNight">-->
     <style name="BaseTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
         <!-- Primary brand color -->
@@ -31,7 +31,6 @@
         <item name="shapeAppearanceMediumComponent">@style/StyleForShapeAppearanceCardView</item>
 
     </style>
-
 
 
 </resources>

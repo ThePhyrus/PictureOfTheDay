@@ -15,8 +15,6 @@ class ApiBottomActivity : AppCompatActivity() {
         setTheme(R.style.ToxicGreenTheme)
         binding = ActivityApiBottomBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.container, EarthFragment.newInstance()).commit()
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.action_bottom_nav_earth -> {
@@ -34,6 +32,6 @@ class ApiBottomActivity : AppCompatActivity() {
             }
             true
         }
-
+        binding.bottomNavigation.selectedItemId = R.id.action_bottom_nav_mars
     }
 }

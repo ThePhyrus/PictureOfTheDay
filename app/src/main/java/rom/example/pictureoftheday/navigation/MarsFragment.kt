@@ -1,16 +1,10 @@
 package rom.example.pictureoftheday.navigation
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.google.android.material.chip.Chip
-import com.google.android.material.tabs.TabLayout
 import rom.example.pictureoftheday.R
 import rom.example.pictureoftheday.databinding.FragmentMarsBinding
-import rom.example.pictureoftheday.databinding.FragmentSettingsBinding
-import rom.example.pictureoftheday.utils.TAG
 
 
 class MarsFragment : Fragment() {
@@ -35,6 +29,7 @@ class MarsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
     }
+
     companion object {
         @JvmStatic
         fun newInstance() = MarsFragment()
