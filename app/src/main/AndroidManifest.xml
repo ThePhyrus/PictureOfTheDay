@@ -20,26 +20,24 @@
         <activity
             android:name=".navigation.bottom.ApiBottomActivity"
             android:exported="true">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
         </activity>
 
 
         <activity
             android:name=".navigation.ApiActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
 
         <activity
             android:name=".view.MainActivity"
-            android:exported="true"></activity>
+            android:exported="true">
+        </activity>
 
 
         <meta-data

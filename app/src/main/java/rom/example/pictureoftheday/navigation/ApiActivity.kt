@@ -2,9 +2,11 @@ package rom.example.pictureoftheday.navigation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 import rom.example.pictureoftheday.R
 import rom.example.pictureoftheday.databinding.ActivityApiBinding
-import rom.example.pictureoftheday.navigation.vp.ViewPagerAdapter
+import rom.example.pictureoftheday.navigation.vp.ViewPager2Adapter
 
 
 class ApiActivity : AppCompatActivity() {
@@ -14,12 +16,21 @@ class ApiActivity : AppCompatActivity() {
         setTheme(R.style.ToxicGreenTheme)
         binding = ActivityApiBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.viewPager.adapter = ViewPagerAdapter(supportFragmentManager)
-        binding.mTabLayout.setupWithViewPager(binding.viewPager)
+        binding.viewPager.adapter = ViewPager2Adapter(this)
 
-        binding.mTabLayout.getTabAt(0)?.setIcon(R.drawable.ic_earth)
-        binding.mTabLayout.getTabAt(1)?.setIcon(R.drawable.ic_mars)
-        binding.mTabLayout.getTabAt(2)?.setIcon(R.drawable.ic_system)
+        TabLayoutMediator(
+            binding.mTabLayout,
+            binding.viewPager,
+            object : TabLayoutMediator.TabConfigurationStrategy {
+                override fun onConfigureTab(tab: TabLayout.Tab, position: Int) {
+                    tab.text = when (position) {
+                        0 -> "Earth"
+                        1 -> "Mars"
+                        else -> "System"
+                    }
+                }
+
+            }).attach()
 
     }
 }
