@@ -65,5 +65,8 @@
 
     <color name="colorAccent40Alpha">#66FBC7CC</color>
 
+    <color name="mr_badge_text_color">#CDDC39</color>
+    <color name="mr_badge_background_color">#000000</color>
+
 
 </resources>

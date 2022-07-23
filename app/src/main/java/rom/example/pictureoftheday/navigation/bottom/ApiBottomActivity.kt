@@ -2,6 +2,7 @@ package rom.example.pictureoftheday.navigation.bottom
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.badge.BadgeDrawable
 import rom.example.pictureoftheday.R
 import rom.example.pictureoftheday.databinding.ActivityApiBottomBinding
 import rom.example.pictureoftheday.navigation.EarthFragment
@@ -33,5 +34,11 @@ class ApiBottomActivity : AppCompatActivity() {
             true
         }
         binding.bottomNavigation.selectedItemId = R.id.action_bottom_nav_mars
+        val badge = binding.bottomNavigation.getOrCreateBadge(R.id.action_bottom_nav_earth)
+        badge.number = 9794
+        badge.maxCharacterCount = 5
+        badge.backgroundColor = resources.getColor(R.color.mr_badge_background_color)
+        badge.badgeTextColor = resources.getColor(R.color.mr_badge_text_color)
+        badge.badgeGravity = BadgeDrawable.TOP_END
     }
 }
