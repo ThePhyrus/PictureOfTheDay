@@ -68,5 +68,8 @@
     <color name="mr_badge_text_color">#CDDC39</color>
     <color name="mr_badge_background_color">#000000</color>
 
+    <color name="mr_bottom_navigation_primary_color">#000000</color>
+    <color name="mr_bottom_navigation_surface_color">#03A9F4</color>
+
 
 </resources>

@@ -34,11 +34,26 @@ class ApiBottomActivity : AppCompatActivity() {
             true
         }
         binding.bottomNavigation.selectedItemId = R.id.action_bottom_nav_mars
-        val badge = binding.bottomNavigation.getOrCreateBadge(R.id.action_bottom_nav_earth)
-        badge.number = 9794
-        badge.maxCharacterCount = 5
-        badge.backgroundColor = resources.getColor(R.color.mr_badge_background_color)
-        badge.badgeTextColor = resources.getColor(R.color.mr_badge_text_color)
-        badge.badgeGravity = BadgeDrawable.TOP_END
+        val badgeEarth = binding.bottomNavigation.getOrCreateBadge(R.id.action_bottom_nav_earth)
+        badgeEarth.maxCharacterCount = 5
+        badgeEarth.number = 7948
+        badgeEarth.backgroundColor = resources.getColor(R.color.mr_badge_background_color)
+        badgeEarth.badgeTextColor = resources.getColor(R.color.mr_badge_text_color)
+        badgeEarth.badgeGravity = BadgeDrawable.TOP_END
+        val badgeMars = binding.bottomNavigation.getOrCreateBadge(R.id.action_bottom_nav_mars)
+        badgeMars.maxCharacterCount = 5
+        badgeMars.number = 0
+        badgeMars.badgeTextColor = resources.getColor(R.color.mr_badge_text_color)
+        badgeMars.backgroundColor = resources.getColor(R.color.mr_badge_background_color)
+        val badgeSystem = binding.bottomNavigation.getOrCreateBadge(R.id.action_bottom_nav_system)
+        badgeSystem.maxCharacterCount = 5
+        badgeSystem.number = 7948
+        badgeSystem.badgeTextColor = resources.getColor(R.color.mr_badge_text_color)
+        badgeSystem.backgroundColor = resources.getColor(R.color.mr_badge_background_color)
+
+//        binding.bottomNavigation.menu.removeItem(R.id.action_bottom_nav_mars)
+//        binding.bottomNavigation.menu.removeItem(R.id.action_bottom_nav_system)
+
+        binding.bottomNavigation.inflateMenu(R.menu.menu_bottom_navigation_drawer)
     }
 }

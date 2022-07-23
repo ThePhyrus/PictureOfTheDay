@@ -9,7 +9,13 @@
     </style>
 
     <style name="StyleForFAB" parent="Widget.MaterialComponents.FloatingActionButton">
-        <item name="tint">@color/red_600</item>
+
+    </style>
+
+    <style name="MyBottomNavigationStyle" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemIconTint">@drawable/my_navigation_bar_item_tint</item>
+        <item name="itemTextColor">@drawable/my_navigation_bar_item_tint</item>
+        <item name="itemRippleColor">@drawable/my_bottom_navigation_ripple</item>
     </style>
 
     <style name="StyleForChip" parent="Widget.MaterialComponents.Chip.Choice">

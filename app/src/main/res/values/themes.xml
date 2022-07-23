@@ -30,6 +30,8 @@
         <item name="textAppearanceBody2">@style/StyleForTextAppearance</item>
         <item name="shapeAppearanceMediumComponent">@style/StyleForShapeAppearanceCardView</item>
 
+        <item name="bottomNavigationStyle">@style/MyBottomNavigationStyle</item>
+
     </style>
 
 
