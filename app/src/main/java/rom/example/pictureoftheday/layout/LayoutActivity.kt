@@ -14,6 +14,7 @@ class LayoutActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLayoutBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.ToxicGreenTheme)
         binding = ActivityLayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initBottomNavigationView()
